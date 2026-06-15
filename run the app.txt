@@ -1,0 +1,59 @@
+Nova OS local links
+
+Frontend:
+http://127.0.0.1:5173/
+
+Backend health:
+http://127.0.0.1:8080/health
+
+Run frontend:
+npm.cmd run dev -- --host 127.0.0.1
+
+Run backend:
+cd server
+npm.cmd run build
+npm.cmd start
+
+Firebase and Google connection
+
+1. Open the frontend.
+2. Go to Integrations.
+3. Click "Connect Google + Bootstrap Firestore".
+4. Sign in with the Google account connected to the Firebase project.
+5. If the backend is running, Nova OS opens the Google Workspace OAuth consent flow.
+
+Required Firebase Console setup
+
+- Enable Authentication > Sign-in method > Google.
+- Add localhost to Authentication > Settings > Authorized domains if it is not already there.
+- Enable Firestore Database.
+- Enable Storage.
+
+Required Google Cloud APIs
+
+- Google Calendar API
+- Google Tasks API
+- Google Sheets API
+- Google Drive API
+- Google Docs API
+- Gmail API
+- People API
+- Gemini API
+
+Google Sheets storage
+
+- Click Integrations > Push habits, journal, finance, projects, goals.
+- If GOOGLE_SHEETS_SPREADSHEET_ID is empty, the backend creates a Motasem OS spreadsheet.
+- The tabs are Habits, Journal, Finance, Projects, Goals.
+- Do not use a published /d/e/.../pubhtml link as GOOGLE_SHEETS_SPREADSHEET_ID. Use the editable /spreadsheets/d/<ID>/edit ID, or leave it empty.
+
+Telegram voice bot
+
+1. Create a Telegram bot with BotFather.
+2. Add the BotFather token to server/.env as TELEGRAM_BOT_TOKEN.
+3. Add TELEGRAM_WEBHOOK_SECRET to server/.env.
+4. Restart the backend.
+5. In Integrations, copy the generated webhook URL.
+6. Use Telegram setWebhook with a public backend URL, not raw localhost.
+
+Voice messages sent to the bot become transcribed memory items.
