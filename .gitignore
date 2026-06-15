@@ -49,7 +49,24 @@ build/
 # Logs
 *.log
 
+# Build/cache files
+dist/
+build/
+.next/
+.cache/
+
 # Editor and operating system
 .vscode/
 .DS_Store
 Thumbs.db
+
+
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Google OAuth tokens and local Nova data
+.nova-local/
+server/.nova-local/
