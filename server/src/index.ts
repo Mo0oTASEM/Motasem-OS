@@ -130,7 +130,7 @@ app.get('/health', (_req, res) => {
   const validation = getConfigValidation();
   res.json({
     ok: true,
-    service: 'nova-os-api',
+    service: 'motasem-os-api',
     environment: config.nodeEnv,
     configOk: validation.ok,
     timestamp: new Date().toISOString()
