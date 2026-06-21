@@ -40,7 +40,7 @@ const senderName = (message: TelegramMessage) =>
   || `chat-${message.chat?.id || 'unknown'}`;
 
 const isAllowedChat = (chatId?: number) =>
-  Boolean(chatId && config.telegramAllowedChatIds.includes(String(chatId)));
+  Boolean(chatId && (config.telegramAllowedChatIds.includes('*') || config.telegramAllowedChatIds.includes(String(chatId))));
 
 const splitCommand = (text: string) => {
   const [rawCommand = '', ...rest] = text.trim().split(/\s+/);
