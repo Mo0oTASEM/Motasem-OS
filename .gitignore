@@ -35,3 +35,4 @@ server-api.*
 .nova-local
 server/.nova-local
 tsconfig.tsbuildinfo
+.vercel
